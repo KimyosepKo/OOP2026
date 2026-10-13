@@ -110,7 +110,7 @@ public class Homework {
 ```java
 
 ```
-![Alt homework9](./img/homework9.png)
+![Alt homework10](./img/homework9.png)
 
 ### Homework11
 ```java
@@ -118,11 +118,6 @@ public class Homework {
 ```
 ![Alt homework11](./img/homework11.png)
 
-### Homework12
-```java
-
-```
-![Alt homework12](./img/homework12.png)
 
 ### Homework13
 ```java
