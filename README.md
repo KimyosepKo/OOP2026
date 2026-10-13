@@ -199,33 +199,30 @@ package homework;
 
 public class Homework {
     public static void main(String[] args) {
-        int data[] = new int[20];
+        int score[][] = new int[30][5];
 
-        for (int i = 0; i < 20; i++) {
-            data[i] = (int)(Math.random() * 100);
-        }
+        for (int i = 0; i < 30; i++) {
+            int sum = 0;
 
-        System.out.println("정렬 전:");
-        for (int i = 0; i < 20; i++) {
-            System.out.print(data[i] + " ");
-        }
-        System.out.println();
-
-        for (int i = 0; i < 19; i++) {
-            for (int j = 0; j < 19 - i; j++) {
-                if (data[j] > data[j + 1]) {
-                    int temp = data[j];
-                    data[j] = data[j + 1];
-                    data[j + 1] = temp;
-                }
+            for (int j = 0; j < 4; j++) {
+                score[i][j] = (int)(Math.random() * 101);
+                sum += score[i][j];
             }
+
+            score[i][4] = sum;
         }
 
-        System.out.println("정렬 후:");
-        for (int i = 0; i < 20; i++) {
-            System.out.print(data[i] + " ");
+        System.out.println("번호\t국어\t영어\t수학\t과학\t총점");
+
+        for (int i = 0; i < 30; i++) {
+            System.out.print((i + 1) + "\t");
+
+            for (int j = 0; j < 5; j++) {
+                System.out.print(score[i][j] + "\t");
+            }
+
+            System.out.println();
         }
-        System.out.println();
     }
 }
 ```
