@@ -72,19 +72,66 @@ public class Homework {
 
 ### Homework3
 ```java
+package homework;
 
+public class Homework {
+    public static void main(String[] args) {
+        int a = 0, b = 1, c;
+        double ratio;
+
+        for (int i = 1; i <= 20; i++) {
+            c = a + b;
+            a = b;
+            b = c;
+
+            ratio = (double) b / a;
+
+            System.out.println(i + "번째 황금비율: " + ratio);
+        }
+    }
+}
 ```
 ![Alt homework3](./img/homework3.png)
 
 ### Homework4
 ```java
+package homework;
 
+public class Homework {
+    public static void main(String[] args) {
+        int i, j;
+
+        for (i = 1; i <= 9; i++) {
+            for (j = 1; j <= 9; j++) {
+                System.out.print(i + " * " + j + " = " + (i * j) + "\t");
+            }
+            System.out.println();
+        }
+    }
+}
 ```
 ![Alt homework4](./img/homework4.png)
 
 ### Homework5
 ```java
+package homework;
 
+public class Homework {
+    public static void main(String[] args) {
+        double pi = 0.0;
+        int sign = 1;
+
+        for (int i = 0; i < 100000; i++) {
+            pi += (double) sign / (2 * i + 1);
+            sign = -sign;
+        }
+
+        pi = pi * 4;
+
+        System.out.println("계산한 원주율: " + pi);
+        System.out.println("실제 원주율: " + Math.PI);
+    }
+}
 ```
 ![Alt homework5](./img/homework5.png)
 
