@@ -171,25 +171,23 @@ package homework;
 
 public class Homework {
     public static void main(String[] args) {
-        int binomial[][] = new int[6][6];
+        int data[] = new int[20];
 
-        for (int i = 0; i < 6; i++) {
-            for (int j = 0; j <= i; j++) {
-                if (j == 0 || j == i) {
-                    binomial[i][j] = 1;
-                } else {
-                    binomial[i][j] = binomial[i - 1][j - 1]
-                                   + binomial[i - 1][j];
+        for (int i = 0; i < 20; i++)
+            data[i] = (int)(Math.random() * 100);
+
+        for (int i = 0; i < 19; i++) {
+            for (int j = 0; j < 19 - i; j++) {
+                if (data[j] > data[j + 1]) {
+                    int temp = data[j];
+                    data[j] = data[j + 1];
+                    data[j + 1] = temp;
                 }
             }
         }
 
-        for (int i = 0; i < 6; i++) {
-            for (int j = 0; j <= i; j++) {
-                System.out.print(binomial[i][j] + " ");
-            }
-            System.out.println();
-        }
+        for (int i = 0; i < 20; i++)
+            System.out.print(data[i] + " ");
     }
 }
 ```
