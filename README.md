@@ -14,4 +14,4 @@ public class Homework1{
 }
 
 ```
-![Alt homework1](./img/homework1.jpg)
+![Alt homework1](./img/homework1.png)
