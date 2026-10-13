@@ -141,16 +141,25 @@ package homework;
 
 public class Homework {
     public static void main(String[] args) {
-        double sum = 0.0;
+        int binomial[][] = new int[6][6];
 
-        for (int i = 1; i <= 100000; i++) {
-            sum += 1.0 / Math.pow(i, 2);
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j <= i; j++) {
+                if (j == 0 || j == i) {
+                    binomial[i][j] = 1;
+                } else {
+                    binomial[i][j] = binomial[i - 1][j - 1]
+                                   + binomial[i - 1][j];
+                }
+            }
         }
 
-        double pi = Math.sqrt(6 * sum);
-
-        System.out.println("계산한 원주율: " + pi);
-        System.out.println("실제 원주율: " + Math.PI);
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print(binomial[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 }
 ```
