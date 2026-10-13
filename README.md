@@ -68,5 +68,64 @@ public class Homework {
     }
 }
 ```
-![Alt homework1](./img/homework2.png)
+![Alt homework2](./img/homework2.png)
 
+### Homework3
+```java
+
+```
+![Alt homework3](./img/homework3.png)
+
+### Homework4
+```java
+
+```
+![Alt homework4](./img/homework4.png)
+
+### Homework5
+```java
+
+```
+![Alt homework5](./img/homework5.png)
+
+### Homework6
+```java
+
+```
+![Alt homework6](./img/homework6.png)
+
+### Homework7
+```java
+
+```
+![Alt homework7](./img/homework7.png)
+
+### Homework8
+```java
+
+```
+![Alt homework8](./img/homework8.png)
+
+### Homework10
+```java
+
+```
+![Alt homework9](./img/homework9.png)
+
+### Homework11
+```java
+
+```
+![Alt homework11](./img/homework11.png)
+
+### Homework12
+```java
+
+```
+![Alt homework12](./img/homework12.png)
+
+### Homework13
+```java
+
+```
+![Alt homework13](./img/homework13.png)
