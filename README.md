@@ -137,19 +137,90 @@ public class Homework {
 
 ### Homework6
 ```java
+package homework;
 
+public class Homework {
+    public static void main(String[] args) {
+        double sum = 0.0;
+
+        for (int i = 1; i <= 100000; i++) {
+            sum += 1.0 / Math.pow(i, 2);
+        }
+
+        double pi = Math.sqrt(6 * sum);
+
+        System.out.println("계산한 원주율: " + pi);
+        System.out.println("실제 원주율: " + Math.PI);
+    }
+}
 ```
 ![Alt homework6](./img/homework6.png)
 
 ### Homework7
 ```java
+package homework;
 
+public class Homework {
+    public static void main(String[] args) {
+        int binomial[][] = new int[6][6];
+
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j <= i; j++) {
+                if (j == 0 || j == i) {
+                    binomial[i][j] = 1;
+                } else {
+                    binomial[i][j] = binomial[i - 1][j - 1]
+                                   + binomial[i - 1][j];
+                }
+            }
+        }
+
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print(binomial[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
 ```
 ![Alt homework7](./img/homework7.png)
 
 ### Homework8
 ```java
+package homework;
 
+public class Homework {
+    public static void main(String[] args) {
+        int data[] = new int[20];
+
+        for (int i = 0; i < 20; i++) {
+            data[i] = (int)(Math.random() * 100);
+        }
+
+        System.out.println("정렬 전:");
+        for (int i = 0; i < 20; i++) {
+            System.out.print(data[i] + " ");
+        }
+        System.out.println();
+
+        for (int i = 0; i < 19; i++) {
+            for (int j = 0; j < 19 - i; j++) {
+                if (data[j] > data[j + 1]) {
+                    int temp = data[j];
+                    data[j] = data[j + 1];
+                    data[j + 1] = temp;
+                }
+            }
+        }
+
+        System.out.println("정렬 후:");
+        for (int i = 0; i < 20; i++) {
+            System.out.print(data[i] + " ");
+        }
+        System.out.println();
+    }
+}
 ```
 ![Alt homework8](./img/homework8.png)
 
