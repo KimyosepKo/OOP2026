@@ -344,6 +344,103 @@ public class Homework {
 
 ### Homework13
 ```java
+package homework;
 
+import java.util.Scanner;
+
+public class Homework {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            String input = scanner.nextLine().trim();
+
+            if (input.equals("exit")) {
+                break;
+            }
+
+            String[] arr = input.split("\\s+");
+
+            if (arr.length < 3 || arr.length > 7 || arr.length % 2 == 0) {
+                continue;
+            }
+
+            double[] numbers = new double[4];
+            String[] operators = new String[3];
+            boolean valid = true;
+
+            for (int i = 0; i < arr.length; i++) {
+                if (i % 2 == 0) {
+                    try {
+                        numbers[i / 2] = Double.parseDouble(arr[i]);
+                    } catch (NumberFormatException e) {
+                        valid = false;
+                        break;
+                    }
+                } else {
+                    if (arr[i].equals("+") || arr[i].equals("-")
+                            || arr[i].equals("/") || arr[i].equals("#")) {
+                        operators[i / 2] = arr[i];
+                    } else {
+                        valid = false;
+                        break;
+                    }
+                }
+            }
+
+            if (!valid) {
+                continue;
+            }
+
+            int numberCount = arr.length / 2 + 1;
+            int operatorCount = numberCount - 1;
+
+            for (int i = 0; i < operatorCount; i++) {
+                if (operators[i].equals("#") || operators[i].equals("/")) {
+                    if (operators[i].equals("/") && numbers[i + 1] == 0) {
+                        valid = false;
+                        break;
+                    }
+
+                    if (operators[i].equals("#")) {
+                        numbers[i] *= numbers[i + 1];
+                    } else {
+                        numbers[i] /= numbers[i + 1];
+                    }
+
+                    for (int j = i + 1; j < numberCount - 1; j++) {
+                        numbers[j] = numbers[j + 1];
+                    }
+
+                    for (int j = i; j < operatorCount - 1; j++) {
+                        operators[j] = operators[j + 1];
+                    }
+
+                    numberCount--;
+                    operatorCount--;
+                    i--;
+                }
+            }
+
+            if (!valid) {
+                continue;
+            }
+
+            double result = numbers[0];
+
+            for (int i = 0; i < operatorCount; i++) {
+                if (operators[i].equals("+")) {
+                    result += numbers[i + 1];
+                } else if (operators[i].equals("-")) {
+                    result -= numbers[i + 1];
+                }
+            }
+
+            System.out.println(result);
+        }
+
+        scanner.close();
+    }
+}
 ```
 ![Alt homework13](./img/homework13.png)
