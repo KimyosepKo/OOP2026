@@ -50,3 +50,23 @@ public class Homework {
 
 ```
 ![Alt homework1](./img/homework1.png)
+
+### Homework2
+```java
+package homework;
+public class Homework {
+    public static void main(String[] args) {
+        int a = 0, b = 1, c;
+
+        for (int i = 0; i < 20; i++) {
+            System.out.print(a + " ");
+
+            c = a + b;
+            a = b;
+            b = c;
+        }
+    }
+}
+```
+![Alt homework1](./img/homework2.png)
+
