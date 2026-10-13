@@ -274,7 +274,70 @@ public class Homework {
 
 ### Homework11
 ```java
+package homework;
 
+public class Homework {
+    public static void main(String[] args) {
+        int array_count;
+
+        if (args.length != 1)
+            return;
+
+        array_count = Integer.parseInt(args[0]);
+
+        int[] arr = new int[array_count];
+
+        for (int i = 0; i < array_count; i++) {
+            arr[i] = (int)(Math.random() * 100);
+        }
+
+        System.out.print("data: ");
+        for (int i = 0; i < array_count; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+
+        double sum = 0;
+        double prod = 1;
+        double reciprocalSum = 0;
+
+        for (int i = 0; i < array_count; i++) {
+            sum += arr[i];
+            prod *= arr[i];
+            reciprocalSum += 1.0 / arr[i];
+        }
+
+        System.out.printf("arithmetic mean = %f\n",
+                sum / array_count);
+
+        System.out.printf("geometric mean = %f\n",
+                Math.pow(prod, 1.0 / array_count));
+
+        System.out.printf("harmonic mean = %f\n",
+                array_count / reciprocalSum);
+
+        for (int i = 0; i < array_count - 1; i++) {
+            for (int j = 0; j < array_count - 1 - i; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+
+        double median;
+
+        if (array_count % 2 == 1) {
+            median = arr[array_count / 2];
+        } else {
+            median = (arr[array_count / 2 - 1]
+                    + arr[array_count / 2]) / 2.0;
+        }
+
+        System.out.printf("median = %f\n", median);
+    }
+}
 ```
 ![Alt homework11](./img/homework11.png)
 
